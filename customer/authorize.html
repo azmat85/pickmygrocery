@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Authorize PickMyGrocery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../assets/bootstrap/css/bootstrap.min.css" 
+              rel="stylesheet" 
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-4">Great to have you here!</h1>
+            <p class="lead">By clicking the authorize button you are giving allowing Walmart application to share the grocery list with PickMyGrocery.</p>
+            <hr class="my-4">
+            <p>You can revoke this authorization whenever you wish.</p>
+            <a id="btnAuthorize" class="btn btn-primary btn-lg" href="#" role="button">Authorize</a>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>
+            window.onunload = function () {
+                var win = window.opener;
+                if (!win.closed) {
+                    win.windowClosed();
+                }
+            };
+            $(document).ready(function(){
+                $("#btnAuthorize").click(function(){
+                    window.close();
+                });
+            });
+        </script>
+    </body>
+</html>
